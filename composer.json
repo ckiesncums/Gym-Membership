@@ -5,10 +5,11 @@
     "license": "proprietary",
     "require": {
         "php": ">=8.2",
+        "ext-mbstring": "*",
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
-        "ext-mbstring": "*",
-        "chillerlan/php-qrcode": "^6.0"
+        "chillerlan/php-qrcode": "^6.0",
+        "phpmailer/phpmailer": "^7.0"
     },
     "autoload": { "psr-4": { "Gym\\": "app/" } },
     "config": { "sort-packages": true, "allow-plugins": false },

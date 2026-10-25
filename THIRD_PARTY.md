@@ -1,5 +1,7 @@
 # Third-party software and fonts
 
+- PHPMailer 7.1.1 — LGPL-2.1, https://github.com/PHPMailer/PHPMailer. Installed by Composer for authenticated Gmail SMTP delivery; upstream license remains in `vendor/phpmailer/phpmailer/`.
+
 - Bootstrap 5.3.8 — MIT, https://github.com/twbs/bootstrap/tree/v5.3.8. Local compiled stylesheet and license are in `public/assets/vendor/`.
 - html5-qrcode 2.3.8 — Apache-2.0, https://github.com/mebjas/html5-qrcode/tree/v2.3.8. Local browser bundle and license are in `public/assets/vendor/`.
 - chillerlan/php-qrcode 6.0.1 and php-settings-container 3.3.0 — MIT. Installed by Composer, locked in `composer.lock`; upstream licenses remain in `vendor/`.

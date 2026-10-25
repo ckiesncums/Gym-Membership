@@ -27,7 +27,9 @@ The seven seeded demonstration members are still present, alongside all subseque
 
 This machine already has the schema, defaults, demo records, dependencies, dedicated application database account, and additive application migration installed. **Do not re-import `schema.sql` into the populated database.** `config/local.php` contains a generated database password and is ignored by version control. Do not publish it.
 
-The verified runtime is PHP 8.5.12 and MariaDB 10.11.16 from C-drive XAMPP. PHP 8.2+ with PDO MySQL and mbstring is supported. The database contains nine InnoDB tables and two read views; `operation_receipts` adds transactional idempotency to the eight Phase 2 tables.
+The verified runtime is PHP 8.5.12 and MariaDB 10.11.16 from C-drive XAMPP. PHP 8.2+ with PDO MySQL and mbstring is supported. PNG email attachments also require GD with FreeType. The base schema contains eleven InnoDB tables and two read views; cloud deployments add `web_sessions` for shared sessions.
+
+Member emails use Gmail SMTP and PHPMailer, with exactly two PNG attachments per email. Edit the subject, wording, brand, and colors in Club settings → Open email studio. See [sender setup and usage](docs/member-email-setup.md).
 
 ## Fresh installation
 
@@ -137,3 +139,5 @@ Run `& 'C:\xampp\php\php.exe' '.\tests\recovery\verify.php'` to create a backup,
 | Dependency class missing | Run Composer install from the lock file with PHP 8.2+ and mbstring enabled. |
 
 See [the completion guide](docs/completed-system.md) for phase-to-file mapping and acceptance results. The old phase documents record earlier milestones; this README describes the current application.
+
+Member-email verification: 23 isolated email assertions (PNG decoding, template editing, MIME attachments, duplicate prevention, cooldown, and interrupted transport), plus 73 HTTP, 73 service, and 72 database assertions passed. No real emails were sent during these tests.
