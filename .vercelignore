@@ -1,0 +1,14 @@
+.git
+.tools
+.runtime
+/vendor/
+node_modules
+.env
+.env.*
+config/local.php
+storage
+tests
+docs
+database
+scripts
+*.log

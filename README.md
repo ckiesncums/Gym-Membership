@@ -31,6 +31,8 @@ The verified runtime is PHP 8.5.12 and MariaDB 10.11.16 from C-drive XAMPP. PHP 
 
 Member emails use Gmail SMTP and PHPMailer, with exactly two PNG attachments per email. Edit the subject, wording, brand, and colors in Club settings → Open email studio. See [sender setup and usage](docs/member-email-setup.md).
 
+Attendance starts a fresh session at **12:00 AM (midnight), Asia/Shanghai** every day. Earlier sessions remain under **Attendance → Attendance Logs**. Open attendance screens update at the boundary; records are never deleted and no scheduled job is required. See [daily attendance behavior](docs/daily-attendance.md).
+
 ## Fresh installation
 
 Install XAMPP, Composer, and the source under an htdocs folder named `gym-membership`. Run `composer install` using PHP 8.2+; the exact dependency versions are pinned in `composer.lock`. On this machine the verified Composer PHAR is also available locally in `.tools/composer.phar`:
