@@ -1,0 +1,13 @@
+.git
+.tools
+.runtime
+node_modules
+vendor
+config/local.php
+.env
+.env.*
+!.env.example
+storage/backups/*
+storage/logs/*
+storage/sessions/*
+*.log

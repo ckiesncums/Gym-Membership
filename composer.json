@@ -1,0 +1,19 @@
+{
+    "name": "form/gym-membership-manager",
+    "description": "Admin-only gym membership and QR attendance management for XAMPP.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "chillerlan/php-qrcode": "^6.0"
+    },
+    "autoload": { "psr-4": { "Gym\\": "app/" } },
+    "config": { "sort-packages": true, "allow-plugins": false },
+    "scripts": {
+        "test:database": "php tests/database/verify.php",
+        "test:services": "php tests/app/verify.php"
+    }
+}

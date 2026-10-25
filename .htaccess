@@ -1,0 +1,14 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+Require local
+
+RewriteEngine On
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(?:app|bootstrap|config|database|docs|routes|scripts|storage|tests|vendor)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:composer\.(?:json|lock)|README\.md)$ - [F,L,NC]
+RewriteRule ^public(?:/|$) - [L]
+RewriteRule ^(.*)$ public/$1 [L]
+
+<FilesMatch "\.(?:sql|ini|log|env|bak|phps)$">
+    Require all denied
+</FilesMatch>

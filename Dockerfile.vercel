@@ -1,0 +1,33 @@
+
+FROM dunglas/frankenphp:php8.3
+
+WORKDIR /app
+
+# Install required PHP extensions
+RUN install-php-extensions pdo_mysql mbstring zip
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Copy Composer files first
+COPY composer.json composer.lock ./
+
+# Install PHP dependencies
+RUN composer install \
+    --no-dev \
+    --no-interaction \
+    --prefer-dist \
+    --no-scripts \
+    --no-autoloader
+
+# Copy the complete application
+COPY . .
+
+# Generate the autoloader after the application's classes are present.
+RUN composer dump-autoload --no-dev --optimize --no-interaction --no-scripts
+
+# Configure the web server
+ENV SERVER_NAME=:80
+
+# Start PHP web server using the public directory
+CMD ["frankenphp", "php-server", "--root", "/app/public", "--listen", ":80"]

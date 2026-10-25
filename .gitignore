@@ -1,0 +1,13 @@
+# Local credentials and generated files
+/config/local.php
+/.env
+/.env.*
+!/.env.example
+/vendor/
+/node_modules/
+/storage/logs/*
+/storage/sessions/*
+/storage/backups/*
+/.tools/
+/.runtime/
+*.log
